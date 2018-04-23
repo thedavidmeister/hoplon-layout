@@ -13,6 +13,7 @@
    [adzerk/boot-cljs "2.1.4"]
    [crisptrutski/boot-cljs-test "0.3.5-SNAPSHOT" :scope "test"]
    [adzerk/boot-test "1.1.1" :scope "test"]
+   [thedavidmeister/hoplon-elem-lib "0.2.0"]
    [hoplon "7.3.0-SNAPSHOT"]
    [samestep/boot-refresh "0.1.0" :scope "test"]
    [com.taoensso/timbre "4.10.0"]
@@ -37,6 +38,9 @@
   (comp (pom) (jar) (install)))
 
 (require
+ '[adzerk.boot-cljs :refer [cljs]]
+ '[hoplon.boot-hoplon :refer [hoplon]]
+ '[tailrecursion.boot-jetty :refer [serve]]
  '[crisptrutski.boot-cljs-test :refer [test-cljs]]
  '[adzerk.bootlaces :refer :all]
  '[adzerk.boot-test :refer [test]]
@@ -68,3 +72,13 @@
                               (merge {:load-tests true
                                       :process-shim false}))
                :namespaces [#".*"])))
+
+(deftask front-dev
+ "Build for local development."
+ []
+ (comp
+  (watch)
+  (speak)
+  (hoplon)
+  (cljs :compiler-options cljs-compiler-options)
+  (serve :port 8000)))
