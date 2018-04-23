@@ -82,3 +82,9 @@
   (hoplon)
   (cljs :compiler-options cljs-compiler-options)
   (serve :port 8000)))
+
+(deftask deploy-clojars
+ []
+ (comp
+  (build-jar)
+  (push-release)))
