@@ -9,7 +9,7 @@
  [{:keys [width height f] :as attributes} children]
  (let [f' (or f h/div)
        el (f'
-           (dissoc attributes :width :height)
+           (dissoc attributes :width :height :f)
            children
            (hoplon-layout.clearfix.hoplon/clearfix))
        width (or width (j/cell 0))
