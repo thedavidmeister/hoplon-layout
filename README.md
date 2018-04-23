@@ -1,5 +1,10 @@
 # hoplon-layout
+
 Toolkit for layouts in Hoplon
+
+## Installation
+
+[![Clojars Project](https://img.shields.io/clojars/v/thedavidmeister/hoplon-layout.svg)](https://clojars.org/thedavidmeister/hoplon-layout)
 
 ## Clearfix
 
