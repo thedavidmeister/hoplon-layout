@@ -6,6 +6,8 @@ Toolkit for layouts in Hoplon
 
 [![Clojars Project](https://img.shields.io/clojars/v/thedavidmeister/hoplon-layout.svg)](https://clojars.org/thedavidmeister/hoplon-layout)
 
+[![CircleCI](https://circleci.com/gh/thedavidmeister/hoplon-layout.svg?style=svg)](https://circleci.com/gh/thedavidmeister/hoplon-layout)
+
 ## Clearfix
 
 A simple div that can be placed after children to force the parent to clear both
